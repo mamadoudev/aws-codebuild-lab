@@ -1,11 +1,14 @@
-app.py
-        → code
+version: 0.2
 
-test_app.py
-        → tests
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo "Installation des dependances"
+      - pip install -r requirements.txt
 
-requirements.txt
-        → dépendances Python
-
-buildspec.yml
-        → instructions pour CodeBuild
+  build:
+    commands:
+      - echo "Execution des tests"
+      - pytest
